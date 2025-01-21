@@ -1,0 +1,21 @@
+
+public class strsum {
+    public static int strsum(String str1, String str2) {
+        int n = str1.length();
+        int m = str2.length();
+        int num1 = 0;
+        int num2 = 0;
+        for (int i = 0; i < n; i++) {
+            num1 = num1 * 10 + (str1.charAt(i) - 48);
+        }
+        for (int i = 0; i < m; i++) {
+            num2 = num2 * 10 + (str2.charAt(i) - 48);
+        }
+        int totsum = num1 + num2;
+        return totsum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(strsum("234", "34"));
+    }
+}
