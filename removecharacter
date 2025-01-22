@@ -1,0 +1,41 @@
+
+import java.util.*;
+
+public class RemoveCharacters {
+
+    public static String removeChars(String str1, String str2) {
+        // Convert the second string into a Set of characters for fast lookup
+        Set<Character> charsToRemove = new HashSet<>();
+        // Use StringBuilder to build the result string
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < str2.length(); i++) {
+            charsToRemove.add(str2.charAt(i));
+        }
+
+        
+        for (int i = 0; i < str1.length(); i++) {
+            char ch = str1.charAt(i);
+            // Add characters to result only if they are not in the second string
+            if (!charsToRemove.contains(ch)) {
+                result.append(ch);
+            }
+        }
+
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the first string:");
+        String str1 = sc.nextLine();
+
+        System.out.println("Enter the second string:");
+        String str2 = sc.nextLine();
+
+        String output = removeChars(str1, str2);
+        System.out.println("String after removing characters: " + output);
+
+        sc.close();
+    }
+}
